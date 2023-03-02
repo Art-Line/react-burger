@@ -1,0 +1,41 @@
+.main-menu {
+    &__btn {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        border: none;
+        background-image: url('../img/menu.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    &__list {
+        display: none;
+        list-style: none;
+        padding-left: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-menu {
+        &__btn {
+            display: none;
+        }
+        &__list {
+            display: flex;
+            li {
+                padding: 0 30px;
+            }
+            a {
+                font-size: 18px;
+                line-height: 1.167em;
+                color: $main;
+                text-decoration: none;
+                transition-duration: 0.2s;
+                transition-property: color;
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+    }
+}

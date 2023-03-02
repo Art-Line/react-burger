@@ -1,0 +1,41 @@
+.footer {
+    border-top: 1px solid #c4c1c1;
+    padding-top: 25px;
+    padding-bottom: 35px;
+    margin-top: auto;
+    &__rights {
+        font-size: 14px;
+        color: #646464;
+    }
+    &__menu {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 20px;
+        a {
+            font-size: 14px;
+            color: #646464;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        &__inset {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__menu {
+            margin-bottom: 0;
+            display: flex;
+            order: 1;
+            li {
+                margin-left: 30px;
+            }
+        }
+    }
+}

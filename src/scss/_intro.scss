@@ -1,0 +1,44 @@
+.intro {
+    &__info {
+        padding-bottom: 20px;
+    }
+    h1 {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.2em;
+        text-transform: capitalize;
+        color: #363853;
+        padding-bottom: 26px;
+        span {
+            color: $orange;
+        }
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.4em;
+    }
+    &__pic {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .intro {
+       display: flex;
+       align-items: center;
+        &__info {
+            width: 46%;
+        }
+        &__pic {
+            width: 54%;
+            max-width: none;
+        }
+        h1 {
+            font-size: 66px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }  
+}
