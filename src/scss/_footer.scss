@@ -22,6 +22,18 @@
     }
 }
 
+@media screen and (min-width: 576px) {
+    .footer {
+        &__menu {
+            display: flex;
+            margin-bottom: 10px;
+            li {
+                margin-right: 30px;
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 768px) {
     .footer {
         &__inset {
@@ -31,10 +43,10 @@
         }
         &__menu {
             margin-bottom: 0;
-            display: flex;
             order: 1;
             li {
                 margin-left: 30px;
+                margin-right: 0;
             }
         }
     }

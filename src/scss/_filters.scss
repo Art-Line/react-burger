@@ -1,0 +1,46 @@
+.filters {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-bottom: 20px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    li {
+        padding-right: 30px;
+    }
+    &__btn {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        line-height: 1.2em;
+        color: $main;
+        position: relative;
+        padding: 0;
+        white-space: nowrap;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background-color: $orange;
+            transition-duration: 0.2s;
+            transition-property: width;
+        }
+        &:hover::after {
+            width: 100%;
+        }
+        &.active {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}

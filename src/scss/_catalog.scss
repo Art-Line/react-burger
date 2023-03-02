@@ -1,0 +1,28 @@
+.catalog {
+   &__nav {
+      padding-bottom: 20px;
+   }
+   &__list {
+      margin-bottom: 20px;
+   }
+}
+
+@media screen and (min-width: 576px) {
+   .catalog {
+      &__list {
+         display: flex;
+         flex-wrap: wrap;
+         margin: 0 -15px;
+      }
+   }
+}
+
+@media screen and (min-width: 992px) {
+   .catalog {
+      &__nav {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+   }
+}

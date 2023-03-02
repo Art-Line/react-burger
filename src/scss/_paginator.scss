@@ -1,0 +1,29 @@
+.paginator {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    li {
+        padding: 0 7px;
+    }
+    a {
+        font-size: 14px;
+        line-height: 1em;
+        color: $main;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid $orange;
+        border-radius: 50%;
+        transition-duration: 0.2s;
+        transition-property: color background-color;
+        &:hover,
+        &.active {
+            color: #ffffff;
+            background-color: $orange;
+        }
+    }
+}

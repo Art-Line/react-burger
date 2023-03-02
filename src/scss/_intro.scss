@@ -1,6 +1,8 @@
 .intro {
+    padding-bottom: 50px;
     &__info {
         padding-bottom: 20px;
+        text-align: center;
     }
     h1 {
         font-weight: 700;
@@ -16,6 +18,7 @@
     p {
         font-size: 16px;
         line-height: 1.4em;
+        padding-bottom: 20px;
     }
     &__pic {
         max-width: 400px;
@@ -28,17 +31,29 @@
        display: flex;
        align-items: center;
         &__info {
-            width: 46%;
+            width: 50%;
+            text-align: left;
         }
         &__pic {
-            width: 54%;
+            width: 34%;
             max-width: none;
         }
         h1 {
-            font-size: 66px;
+            font-size: 46px;
         }
         p {
             font-size: 20px;
         }
     }  
+}
+
+@media screen and (min-width: 992px) {
+    .intro {
+        h1 {
+            font-size: 56px;
+        }
+        p {
+            font-size: 20px;
+        }
+     } 
 }
