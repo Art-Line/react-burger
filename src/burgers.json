@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "./img/good-01.jpg",
+        "title": "Cheeseburger with salad",
+        "price": 25,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 2,
+        "imageUrl": "./img/good-02.jpg",
+        "title": "Double cheeseburger with onion",
+        "price": 40,
+        "category": 1,
+        "rating": 5
+    },
+    {
+        "id": 3,
+        "imageUrl": "./img/good-03.jpg",
+        "title": "Standard burger",
+        "price": 20,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 4,
+        "imageUrl": "./img/good-04.jpg",
+        "title": "Veggie cheeseburger with tomato",
+        "price": 10,
+        "category": 2,
+        "rating": 3
+    },
+    {
+        "id": 5,
+        "imageUrl": "./img/good-05.jpg",
+        "title": "Cheeseburger with cucumber",
+        "price": 22,
+        "category": 0,
+        "rating": 2
+      },
+      {
+        "id": 6,
+        "imageUrl": "./img/good-06.jpg",
+        "title": "Burger with bacon and spicy sauce",
+        "price": 25,
+        "category": 3,
+        "rating": 4
+      },
+      {
+        "id": 7,
+        "imageUrl": "./img/good-07.jpg",
+        "title": "Burger with two cutlets and omelette",
+        "price": 35,
+        "category": 1,
+        "rating": 5
+      },
+      {
+        "id": 8,
+        "imageUrl": "./img/good-08.jpg",
+        "title": "Burger with vegetables",
+        "price": 30,
+        "category": 0,
+        "rating": 5
+      }
+]

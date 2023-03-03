@@ -5,6 +5,8 @@ import Paginator from '../components/Paginator';
 import Sorting from '../components/Sorting';
 import logo from '../img/logo.svg';
 
+import burgersList from '../burgers.json';
+
 function Home() {
     return (
         <>
@@ -34,47 +36,16 @@ function Home() {
                             <Sorting />
                         </div>
                         <div className="catalog__list">
-                            <CatalogItem
-                                img={"./img/good-01.jpg"}
-                                price={18.00}
-                                title="Cheeseburger With Salad"
-                                count={3}
-                            />
-                            <CatalogItem
-                                img={"./img/good-02.jpg"}
-                                price={19.00}
-                                title="Cheeseburger With Salad"
-                            />
-                            <CatalogItem
-                                img={"./img/good-03.jpg"}
-                                price={55.00}
-                                title="Cheeseburger With Salad"
-                            />
-                            <CatalogItem
-                                img={"./img/good-04.jpg"}
-                                price={55.00}
-                                title="Cheeseburger With Salad"
-                            />
-                            <CatalogItem
-                                img={"./img/good-05.jpg"}
-                                price={55.00}
-                                title="Cheeseburger With Salad"
-                            />
-                            <CatalogItem
-                                img={"./img/good-06.jpg"}
-                                price={55.00}
-                                title="Cheeseburger With Salad"
-                            />
-                            <CatalogItem
-                                img={"./img/good-07.jpg"}
-                                price={55.00}
-                                title="Cheeseburger With Salad"
-                            />
-                            <CatalogItem
-                                img={"./img/good-08.jpg"}
-                                price={55.00}
-                                title="Cheeseburger With Salad"
-                            />
+                            {burgersList.map(item => {
+                                return (
+                                    <CatalogItem
+                                        key={item.id}
+                                        img={item.imageUrl}
+                                        price={item.price}
+                                        title={item.title}
+                                    />
+                                )
+                            })}
                         </div>
                         <Paginator />
                     </section>
