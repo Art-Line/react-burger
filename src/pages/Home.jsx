@@ -4,10 +4,19 @@ import Intro from '../components/Intro';
 import Paginator from '../components/Paginator';
 import Sorting from '../components/Sorting';
 import logo from '../img/logo.svg';
-
-import burgersList from '../burgers.json';
+// import burgersList from '../burgers.json';
+import { useEffect, useState } from 'react';
 
 function Home() {
+
+    const [goods, setGoods] = useState([]);
+
+    useEffect(() => {
+        fetch('https://62c09be2d40d6ec55cd39a5f.mockapi.io/burgers')
+        .then(res => res.json())
+        .then(json => setGoods(json));
+    }, []);
+
     return (
         <>
             <div className="container">
@@ -36,7 +45,7 @@ function Home() {
                             <Sorting />
                         </div>
                         <div className="catalog__list">
-                            {burgersList.map(item => {
+                            {goods.map(item => {
                                 return (
                                     <CatalogItem
                                         key={item.id}
