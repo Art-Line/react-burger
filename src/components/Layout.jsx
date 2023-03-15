@@ -1,0 +1,44 @@
+import { Link, NavLink, Outlet } from "react-router-dom";
+import logo from '../img/logo.svg';
+
+function Layout() {
+    return (
+        <>
+            <div className="container">
+                <header className="header">
+                    <Link to="/" className="logo">
+                        <img className="img-responsive" src={logo} alt="burger" width="166" height="44" />
+                    </Link>
+                    <Link to="/cart" className="cart" aria-label="open cart page">
+                        <span className="cart__count">3</span>
+                    </Link>
+                    <nav className="main-menu">
+                        <button type="button" className="main-menu__btn" aria-label="open menu"></button>
+                        <ul className="main-menu__list">
+                            <li><NavLink to="/service">Service</NavLink></li>
+                            <li><NavLink to="/restaurants">Restaurants</NavLink></li>
+                            <li><NavLink to="/contact">Contract</NavLink></li>
+                        </ul>
+                    </nav>
+                </header>
+                <main className="main">
+                    <Outlet />
+                </main>
+            </div>
+            <footer className="footer">
+                <div className="container">
+                    <div className="footer__inset">
+                        <ul className="footer__menu">
+                            <li><NavLink to="/service">Service</NavLink></li>
+                            <li><NavLink to="/restaurants">Restaurants</NavLink></li>
+                            <li><NavLink to="/contact">Contract</NavLink></li>
+                        </ul>
+                        <p className="footer__rights">© 2023 Burger - All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </>
+    )
+}
+
+export default Layout;

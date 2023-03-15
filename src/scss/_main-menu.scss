@@ -4,6 +4,7 @@
         width: 20px;
         height: 20px;
         border: none;
+        background-color: transparent;
         background-image: url('../img/menu.svg');
         background-repeat: no-repeat;
         background-position: center center;
@@ -34,6 +35,10 @@
                 transition-property: color;
                 &:hover {
                     color: $orange;
+                }
+                &.active {
+                    color: $orange;
+                    text-decoration: underline;
                 }
             }
         }

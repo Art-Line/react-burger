@@ -55,12 +55,14 @@ input[type="radio"].visually-hidden {
   clip-path: inset(100%);
 }
 
-h2 {
+h2,
+.h2-title {
     font-size: 36px;
     line-height: 1.2em;
     font-weight: 700;
     padding-bottom: 30px;
     text-align: center;
+    text-transform: capitalize;
     span {
         color: $orange;
     }

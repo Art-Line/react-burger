@@ -39,8 +39,9 @@
         border-radius: 5px;
         list-style: none;
         position: absolute;
-        right: 0;
+        left: 0;
         top: 30px;
+        z-index: 1;
         padding: 15px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         li:not(:last-child) {
@@ -67,6 +68,15 @@
                 color: $orange;
                 background-color: #e4e8fc;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .sort {
+        &__tooltip {
+            left: auto;
+            right: 0;
         }
     }
 }

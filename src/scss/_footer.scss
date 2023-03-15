@@ -15,7 +15,8 @@
             font-size: 14px;
             color: #646464;
             text-decoration: none;
-            &:hover {
+            &:hover,
+            &.active {
                 text-decoration: underline;
             }
         }
