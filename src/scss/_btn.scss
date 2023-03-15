@@ -3,7 +3,6 @@
     font-size: 16px;
     line-height: 1.2em;
     font-weight: 700;
-    color: #ffffff;
     letter-spacing: 0.2px;
     text-decoration: none;
     padding: 10px 30px;
@@ -11,13 +10,43 @@
     border-radius: 8px;
     display: inline-flex;
     justify-content: center;
-    background-color: $orange;
-    transition-duration: 0.2s;
-    transition-property: box-shadow background-color;
     &_block {
         display: flex;
         width: 100%;
         padding: 10px 20px;
+    }
+    &_orange {
+        color: #ffffff;
+        background-color: $orange;
+        transition-duration: 0.2s;
+        transition-property: box-shadow, background-color;
+        &:hover {
+            box-shadow: 0 0 10px rgba(255, 104, 56, 0.19);
+            background-color: rgba(255, 104, 56, 0.9);
+        }
+        &:active {
+            background-color: $orange;
+            box-shadow: 0 1px 0 #902400;
+        }
+    }
+    &_gray {
+        color: #c8c8c8;
+        border: 1px solid #c8c8c8;
+        background-color: transparent;
+        transition-duration: 0.2s;
+        transition-property: box-shadow, color;
+        &:hover {
+            box-shadow: 0 0 10px rgba(200, 200, 200, 0.19);
+        }
+        &:active {
+            box-shadow: 0 1px 0 #c8c8c8;
+        }
+    }
+    &_left-arrow {
+        background-image: url('../img/left-arrow.svg');
+        background-repeat: no-repeat;
+        background-position: 20px center;
+        padding-left: 50px;
     }
     span {
         font-size: 12px;
@@ -32,14 +61,7 @@
         color: $orange;
         margin-left: 10px;
     }
-    &:hover {
-        box-shadow: 0 0 10px rgba(255, 104, 56, 0.19);
-        background-color: rgba(255, 104, 56, 0.9);
-    }
-    &:active {
-        background-color: $orange;
-        box-shadow: 0 1px 0 #902400;
-    }
+
     // &:focus {
     //     outline: none;
     //     box-shadow: 0 0 10px rgba(255, 104, 56, 0.9);

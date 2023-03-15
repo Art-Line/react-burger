@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Service from "./pages/Service";
 import Restaurants from "./pages/Restaurants";
 import Cart from "./pages/Cart";
-import Contact from "./pages/Contract";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 

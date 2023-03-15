@@ -17,7 +17,7 @@ function Layout() {
                         <ul className="main-menu__list">
                             <li><NavLink to="/service">Service</NavLink></li>
                             <li><NavLink to="/restaurants">Restaurants</NavLink></li>
-                            <li><NavLink to="/contact">Contract</NavLink></li>
+                            <li><NavLink to="/contact">Contact</NavLink></li>
                         </ul>
                     </nav>
                 </header>
@@ -31,7 +31,7 @@ function Layout() {
                         <ul className="footer__menu">
                             <li><NavLink to="/service">Service</NavLink></li>
                             <li><NavLink to="/restaurants">Restaurants</NavLink></li>
-                            <li><NavLink to="/contact">Contract</NavLink></li>
+                            <li><NavLink to="/contact">Contact</NavLink></li>
                         </ul>
                         <p className="footer__rights">© 2023 Burger - All rights reserved.</p>
                     </div>

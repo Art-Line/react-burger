@@ -1,0 +1,161 @@
+.cart-page {
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        h1 {
+            padding-bottom: 0;
+        }
+    }
+    &__clear-btn {
+        cursor: pointer;
+        font-size: 16px;
+        color: #c8c8c8;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        transition-duration: 0.2s;
+        transition-property: color;
+        svg {
+            display: block;
+            margin-right: 8px;
+            path {
+                transition-duration: 0.2s;
+                transition-property: fill;
+            }
+        }
+        &:hover {
+            color: $red;
+            svg {
+                path {
+                    fill: $red;
+                }
+            }
+        }
+    }
+    &__list {
+        padding-left: 0;
+        list-style: none;
+    }
+    &__item {
+        background: #ffffff;
+        border-radius: 5px;
+        padding: 10px 0;
+        margin: 0 0 15px;
+        &-good {
+            display: flex;
+            align-items: center;
+            padding: 0 15px 10px;
+            img {
+                display: block;
+                width: 100px;
+                height: auto;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.4em;
+            }
+        }
+        &-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+        &-count {
+            display: flex;
+            align-items: center;
+            &-btn {
+                cursor: pointer;
+                border: none;
+                background-color: transparent;
+                transition-duration: 0.2s;
+                transition-property: opacity;
+                svg {
+                    display: block;
+                    path {
+                        fill: $orange;
+                    }
+                }
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+            &-num {
+                font-size: 18px;
+                line-height: 30px;
+                color: #363853;
+                width: 50px;
+                border: 1px solid #e0e1e4;
+                padding: 3px 12px;
+                border-radius: 10px;
+                background: #f9faff;
+            }
+        }
+        &-price {
+            font-size: 24px;
+        }
+        &-delete {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            svg {
+                display: block;
+                path {
+                    fill: #c8c8c8;
+                    transition-duration: 0.2s;
+                    transition-property: fill;
+                }
+            }
+            &:hover {
+                svg {
+                    path {
+                        fill: $red;
+                    }
+                }
+            }
+        }
+    }
+    &__finnaly {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        p {
+            font-size: 16px;
+            b {
+                font-size: 18px;
+            }
+        }
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .cart-page {
+        &__item {
+            display: flex;
+            align-items: center;
+            &-good {
+                width: 60%;
+                padding-bottom: 0;
+                img {
+                    width: 150px;
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+            &-info {
+                width: 40%;
+            }
+        }
+    }
+}

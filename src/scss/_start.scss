@@ -61,7 +61,6 @@ h2,
     line-height: 1.2em;
     font-weight: 700;
     padding-bottom: 30px;
-    text-align: center;
     text-transform: capitalize;
     span {
         color: $orange;
@@ -76,4 +75,8 @@ a {
 
 button {
     font-family: inherit;
+}
+
+.c-orange {
+    color: $orange;
 }
