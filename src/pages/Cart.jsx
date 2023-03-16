@@ -22,12 +22,12 @@ function Cart() {
                     </div>
                     <div className="cart-page__item-info">
                         <div className="cart-page__item-count">
-                            <button className="cart-page__item-count-btn cart-page__item-count-btn_minus" type="button"><IcoMinus /></button>
+                            <button className="cart-page__item-count-btn cart-page__item-count-btn_minus" type="button" aria-label="decrease by one"><IcoMinus /></button>
                             <input className="cart-page__item-count-num" type="text" defaultValue={1} />
-                            <button className="cart-page__item-count-btn cart-page__item-count-btn_plus" type="button"><IcoPlus /></button>
+                            <button className="cart-page__item-count-btn cart-page__item-count-btn_plus" type="button" aria-label="increase by one"><IcoPlus /></button>
                         </div>
                         <p className="cart-page__item-price">$25</p>
-                        <button type="button" className="cart-page__item-delete">
+                        <button type="button" className="cart-page__item-delete" aria-label="delete this product">
                             <IcoDelete />
                         </button>
                     </div>
@@ -38,13 +38,13 @@ function Cart() {
                         <p>Cheeseburger with salad more  more  more  more  more  more  more  more  more  more  more  more text</p>
                     </div>
                     <div className="cart-page__item-info">
-                        <div className="cart-page__item-count">
-                            <button className="cart-page__item-count-btn cart-page__item-count-btn_minus" type="button"><IcoMinus /></button>
+                    <div className="cart-page__item-count">
+                            <button className="cart-page__item-count-btn cart-page__item-count-btn_minus" type="button" aria-label="decrease by one"><IcoMinus /></button>
                             <input className="cart-page__item-count-num" type="text" defaultValue={1} />
-                            <button className="cart-page__item-count-btn cart-page__item-count-btn_plus" type="button"><IcoPlus /></button>
+                            <button className="cart-page__item-count-btn cart-page__item-count-btn_plus" type="button" aria-label="increase by one"><IcoPlus /></button>
                         </div>
                         <p className="cart-page__item-price">$25</p>
-                        <button type="button" className="cart-page__item-delete">
+                        <button type="button" className="cart-page__item-delete" aria-label="delete this product">
                             <IcoDelete />
                         </button>
                     </div>

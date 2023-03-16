@@ -1,7 +1,12 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from '../img/logo.svg';
+import { useState } from "react";
+import useWindowDimension from "../libraries/resize";
 
 function Layout() {
+    const [mobileMenu, setMobileMenu] = useState(false);
+    const [siteWidth] = useWindowDimension();
+    const desktop = siteWidth >= 768;
     return (
         <>
             <div className="container">
@@ -13,12 +18,19 @@ function Layout() {
                         <span className="cart__count">3</span>
                     </Link>
                     <nav className="main-menu">
-                        <button type="button" className="main-menu__btn" aria-label="open menu"></button>
-                        <ul className="main-menu__list">
-                            <li><NavLink to="/service">Service</NavLink></li>
-                            <li><NavLink to="/restaurants">Restaurants</NavLink></li>
-                            <li><NavLink to="/contact">Contact</NavLink></li>
-                        </ul>
+                        <button
+                            type="button"
+                            aria-label="open menu"
+                            onClick={() => setMobileMenu(!mobileMenu)}
+                            className={`main-menu__btn ${mobileMenu ? 'active' : ''}`}
+                        ></button>
+                        {(desktop || mobileMenu) &&
+                            <ul className="main-menu__list">
+                                <li><NavLink to="/service" onClick={() => setMobileMenu(false)}>Service</NavLink></li>
+                                <li><NavLink to="/restaurants" onClick={() => setMobileMenu(false)}>Restaurants</NavLink></li>
+                                <li><NavLink to="/contact" onClick={() => setMobileMenu(false)}>Contact</NavLink></li>
+                            </ul>
+                        }
                     </nav>
                 </header>
                 <main className="main">

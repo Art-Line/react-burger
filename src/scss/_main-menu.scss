@@ -8,11 +8,47 @@
         background-image: url('../img/menu.svg');
         background-repeat: no-repeat;
         background-position: center center;
+        &.active {
+            background-image: url('../img/menu-close.svg');
+        }
     }
     &__list {
-        display: none;
         list-style: none;
         padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main-menu {
+        &__list {
+            position: fixed;
+            right: 15px;
+            left: 0;
+            top: 80px;
+            width: 100%;
+            padding: 25px 15px;
+            background-color: #ffffff;
+            height: calc(100vh - 80px);
+            overflow: auto;
+            li {
+                &:not(:last-child) {
+                    padding-bottom: 20px;
+                }
+            }
+            a {
+                color: $main;
+                text-align: center;
+                padding: 10px;
+                background-color: #f8f8f8;
+                display: block;
+                text-decoration: none;
+                border-radius: 5px;
+                &.active {
+                    color: #ffffff;
+                    background-color: $orange;
+                }
+            }
+        }
     }
 }
 
