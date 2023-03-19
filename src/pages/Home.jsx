@@ -55,6 +55,7 @@ function Home() {
                             img={item.imageUrl}
                             price={item.price}
                             title={item.title}
+                            rating={item.rating}
                         />
                         )
                         :

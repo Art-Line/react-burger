@@ -14,6 +14,44 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     }
+    &__rating {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        &-item {
+            background-image: url('../img/rating-star.svg');
+            opacity: 0.3;
+            width: 20px;
+            height: 20px;
+            margin: 0 2px;
+        }
+        &_5 {
+            .catalog-item__rating-item {
+                opacity: 1;
+            }
+        }
+        &_4 {
+            .catalog-item__rating-item:not(:last-child) {
+                opacity: 1;
+            }
+        }
+        &_3 {
+            .catalog-item__rating-item:not(:last-child):not(:nth-last-child(2)) {
+                opacity: 1;
+            }
+        }
+        &_2 {
+            .catalog-item__rating-item:first-child,
+            .catalog-item__rating-item:nth-child(2) {
+                opacity: 1;
+            }
+        }
+        &_1 {
+            .catalog-item__rating-item:first-child {
+                opacity: 1;
+            }
+        }
+    }
     &__title {
         font-size: 20px;
         font-weight: 400;
