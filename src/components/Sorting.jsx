@@ -1,12 +1,36 @@
 import { useState } from "react";
 
-function Sorting() {
+function Sorting({sortActive, setSortActive}) {
     const [sortTooltip, setSortTooltip] = useState(false);
-    const sortList = ['popularity A-Z', 'popularity Z-A', 'price A-Z', 'price Z-A', 'alphabet A-Z', 'alphabet Z-A'];
-    const [sortActive, setSortActive] = useState(0);
+    const sortList = [
+        {
+            name: 'popularity A-Z',
+            field: 'raiting'
+        }, 
+        {
+            name: 'popularity Z-A',
+            field: '-raiting'
+        }, 
+        {
+            name: 'price A-Z',
+            field: 'price'
+        }, 
+        {
+            name: 'price Z-A',
+            field: '-price'
+        }, 
+        {
+            name: 'alphabet A-Z',
+            field: 'title'
+        },
+        {
+            name: 'alphabet Z-A',
+            field: '-title'
+        }];
+    
 
-    const selectSort = (index) => {
-        setSortActive(index);
+    const selectSort = (obj) => {
+        setSortActive(obj);
         setSortTooltip(false);
     }
 
@@ -17,18 +41,18 @@ function Sorting() {
                 className={`sort__btn ${sortTooltip ? 'active' : ''}`}
                 onClick={() => setSortTooltip(!sortTooltip)}
             >
-                Sort by: {sortList[sortActive]}
+                Sort by: {sortActive.name}
             </button>
             {sortTooltip &&
                 <ul className="sort__tooltip">
-                    {sortList.map((item, index) =>
-                        <li key={index}>
+                    {sortList.map((obj) =>
+                        <li key={obj.index}>
                             <button
                                 type="button"
-                                onClick={() => selectSort(index)}
-                                className={`sort__tooltip-btn ${sortActive === index ? 'active' : ''}`}
+                                onClick={() => selectSort(obj)}
+                                className={`sort__tooltip-btn ${sortActive.field === obj.field ? 'active' : ''}`}
                             >
-                                {item}
+                                {obj.name}
                             </button>
                         </li>
                     )}

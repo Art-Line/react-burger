@@ -1,8 +1,6 @@
-import { useState } from "react";
-
-function Filters() {
+function Filters({currentCategory, setCurrentCategory}) {
     const categories = ['All burgers', 'Simple burgers', 'Double burgers', 'Veggie burger', 'Spicy burgers'];
-    const [currentCategory, setCurrentCategory] = useState(0);
+    
     return (
         <ul className="filters">
             {categories.map((elem, index) => {

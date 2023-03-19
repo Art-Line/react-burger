@@ -10,16 +10,31 @@ import { useEffect, useState } from 'react';
 function Home() {
 
     const [goods, setGoods] = useState([]);             // state for goods
-    const [isLoading, setIsLoading] = useState(false);  // if goods in loading show Skeleton
+    const [loading, setLoading] = useState(false);      // if goods in loading show Skeleton
+
+    // select category
+    const [currentCategory, setCurrentCategory] = useState(0);
+    const isCategory = currentCategory ? `category=${currentCategory}` : '';
+
+    // sorting
+    const [sortActive, setSortActive] = useState({
+        name: 'popularity A-Z',
+        field: 'raiting'
+    });
+    const sortDirection = (sortActive.field.charAt(0) === '-') ? 'desc' : 'asc';
+    const sortField = ((sortActive.field.charAt(0) === '-')) ? sortActive.field.substring(1) : sortActive.field;
+    const isSorting = sortActive ? `&orderby=${sortField}&order=${sortDirection}` : '';
+
 
     useEffect(() => {
-        fetch('https://62c09be2d40d6ec55cd39a5f.mockapi.io/burgers')
+        setLoading(false);
+        fetch(`https://62c09be2d40d6ec55cd39a5f.mockapi.io/burgers?${isCategory}${isSorting}`)
             .then(res => res.json())
             .then(json => {
                 setGoods(json);
-                setIsLoading(true);                     // when goods loading is done 
+                setLoading(true);                     // when goods loading is done 
             });
-    }, []);
+    }, [isCategory, isSorting]);
 
     return (
         <>
@@ -27,11 +42,14 @@ function Home() {
             <section className="catalog">
                 <h2>Our <span>Burgers</span></h2>
                 <div className="catalog__nav">
-                    <Filters />
-                    <Sorting />
+                    <Filters currentCategory={currentCategory} setCurrentCategory={(id) => setCurrentCategory(id)} />
+                    <Sorting
+                        sortActive={sortActive}
+                        setSortActive={(obj) => setSortActive(obj)}
+                    />
                 </div>
                 <ul className="catalog__list">
-                    {isLoading ?
+                    {loading ?
                         goods.map(item => <CatalogItem
                             key={item.id}
                             img={item.imageUrl}
