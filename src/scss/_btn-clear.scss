@@ -1,0 +1,20 @@
+.btn-clear {
+    cursor: pointer;
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    svg {
+        display: block;
+        path {
+            fill: #c8c8c8;
+            transition-duration: 0.2s;
+            transition-property: fill;
+        }
+    }
+    &:hover {
+        svg path {
+            fill: $orange;
+        }
+    }
+}

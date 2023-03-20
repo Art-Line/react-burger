@@ -7,7 +7,7 @@ import Sorting from '../components/Sorting';
 // import burgersList from '../burgers.json';
 import { useEffect, useState } from 'react';
 
-function Home() {
+function Home({ searchValue, setSearchValue }) {
 
     const [goods, setGoods] = useState([]);             // state for goods
     const [loading, setLoading] = useState(false);      // if goods in loading show Skeleton
@@ -38,9 +38,11 @@ function Home() {
 
     return (
         <>
-            <Intro />
+            {!searchValue && <Intro />}
             <section className="catalog">
-                <h2>Our <span>Burgers</span></h2>
+                <h2>
+                    {searchValue ? `Search: ${searchValue}` : 'Our Burgers'}
+                </h2>
                 <div className="catalog__nav">
                     <Filters currentCategory={currentCategory} setCurrentCategory={(id) => setCurrentCategory(id)} />
                     <Sorting
@@ -50,14 +52,19 @@ function Home() {
                 </div>
                 <ul className="catalog__list">
                     {loading ?
-                        goods.map(item => <CatalogItem
+                        goods
+                        .filter((obj) => {
+                            if(obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
+                                return true;
+                            } 
+                            return false;
+                        })
+                        .map(item => <CatalogItem
                             key={item.id}
                             img={item.imageUrl}
                             price={item.price}
                             title={item.title}
-                            rating={item.rating}
-                        />
-                        )
+                            rating={item.rating} />)
                         :
                         [...new Array(8)].map((_, index) => <Skeleton key={index} />)
                     }

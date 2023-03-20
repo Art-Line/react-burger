@@ -1,0 +1,18 @@
+.btn-search {
+    cursor: pointer;
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition-duration: 0.2s;
+    transition-property: opacity;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .btn-search {
+        order: 1;
+    }
+}
