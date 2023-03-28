@@ -5,25 +5,54 @@
     justify-content: center;
     li {
         padding: 0 7px;
-    }
-    a {
-        font-size: 14px;
-        line-height: 1em;
-        color: $main;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-        border: 1px solid $orange;
-        border-radius: 50%;
-        transition-duration: 0.2s;
-        transition-property: color background-color;
-        &:hover,
-        &.active {
-            color: #ffffff;
-            background-color: $orange;
+        a {
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1em;
+            color: $main;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border: 1px solid $orange;
+            border-radius: 50%;
+            transition-duration: 0.2s;
+            transition-property: color background-color;
+        }
+        &:not(.disabled) {
+            a:hover {
+                color: #ffffff;
+                background-color: $orange;
+            }
+        }
+        &.selected {
+            a {
+                color: #ffffff;
+                background-color: $orange;
+            }
+        }
+        &.disabled {
+            a {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+        &.previous,
+        &.next {
+            a {
+                background-image: url('../img/paginator-arrow.svg');
+                background-size: 8px auto;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            &:not(.disabled) a:hover {
+                background-image: url('../img/paginator-arrow-white.svg');
+            }
+        }
+        &.previous {
+            transform: rotate(180deg);
         }
     }
 }

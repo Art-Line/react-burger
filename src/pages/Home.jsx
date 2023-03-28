@@ -25,16 +25,18 @@ function Home({ searchValue, setSearchValue }) {
     const sortField = ((sortActive.field.charAt(0) === '-')) ? sortActive.field.substring(1) : sortActive.field;
     const isSorting = sortActive ? `&orderby=${sortField}&order=${sortDirection}` : '';
 
+    const [currentPage, setCurrentPage] = useState(1);
+
 
     useEffect(() => {
         setLoading(false);
-        fetch(`https://62c09be2d40d6ec55cd39a5f.mockapi.io/burgers?${isCategory}${isSorting}`)
+        fetch(`https://62c09be2d40d6ec55cd39a5f.mockapi.io/burgers?${isCategory}${isSorting}&page=${currentPage}&limit=8`)
             .then(res => res.json())
             .then(json => {
                 setGoods(json);
                 setLoading(true);                     // when goods loading is done 
             });
-    }, [isCategory, isSorting]);
+    }, [isCategory, isSorting, currentPage]);
 
     return (
         <>
@@ -53,23 +55,23 @@ function Home({ searchValue, setSearchValue }) {
                 <ul className="catalog__list">
                     {loading ?
                         goods
-                        .filter((obj) => {
-                            if(obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
-                                return true;
-                            } 
-                            return false;
-                        })
-                        .map(item => <CatalogItem
-                            key={item.id}
-                            img={item.imageUrl}
-                            price={item.price}
-                            title={item.title}
-                            rating={item.rating} />)
+                            .filter((obj) => {
+                                if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
+                                    return true;
+                                }
+                                return false;
+                            })
+                            .map(item => <CatalogItem
+                                key={item.id}
+                                img={item.imageUrl}
+                                price={item.price}
+                                title={item.title}
+                                rating={item.rating} />)
                         :
                         [...new Array(8)].map((_, index) => <Skeleton key={index} />)
                     }
                 </ul>
-                <Paginator />
+                <Paginator currentPage={currentPage} setCurrentPage={setCurrentPage} />
             </section>
         </>
     )

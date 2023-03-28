@@ -1,10 +1,16 @@
-function Paginator() {
+import ReactPaginate from 'react-paginate';
+function Paginator({currentPage, setCurrentPage}) {
     return (
-        <ul className="paginator">
-            <li><a className="active" href="!#">1</a></li>
-            <li><a href="!#">2</a></li>
-            <li><a href="!#">3</a></li>
-        </ul>
+        <ReactPaginate
+            className="paginator"
+            breakLabel="..."
+            nextLabel=""
+            onPageChange={e => setCurrentPage(e.selected +1 )}
+            pageRangeDisplayed={8}
+            pageCount={2}
+            previousLabel=""
+            renderOnZeroPageCount={null}
+        />
     )
 }
 
