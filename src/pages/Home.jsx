@@ -5,9 +5,10 @@ import Intro from '../components/Intro';
 import Paginator from '../components/Paginator';
 import Sorting from '../components/Sorting';
 // import burgersList from '../burgers.json';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import {SearchContext} from '../App'
 
-function Home({ searchValue, setSearchValue }) {
+function Home() {
 
     const [goods, setGoods] = useState([]);             // state for goods
     const [loading, setLoading] = useState(false);      // if goods in loading show Skeleton
@@ -26,6 +27,8 @@ function Home({ searchValue, setSearchValue }) {
     const isSorting = sortActive ? `&orderby=${sortField}&order=${sortDirection}` : '';
 
     const [currentPage, setCurrentPage] = useState(1);
+
+    const {searchValue} = useContext(SearchContext);
 
 
     useEffect(() => {

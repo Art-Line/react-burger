@@ -1,6 +1,11 @@
+import { useContext } from 'react';
 import { ReactComponent as IcoDelete } from '../img/delete.svg';
+import {SearchContext} from '../App'
 
-function Search({ searchValue, setSearchValue }) {
+function Search() {
+
+    const {searchValue, setSearchValue} = useContext(SearchContext);
+
     return (
         <div className="search-box">
             <input

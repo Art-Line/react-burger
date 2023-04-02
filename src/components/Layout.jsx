@@ -5,7 +5,7 @@ import useWindowDimension from "../libraries/resize";
 import Search from './Search';
 import { ReactComponent as IcoSearch } from '../img/search.svg';
 
-function Layout({searchValue, setSearchValue}) {
+function Layout() {
     const [mobileMenu, setMobileMenu] = useState(false);
     const [siteWidth] = useWindowDimension();
     const [searchBox, setSearchBox] = useState(false);
@@ -41,7 +41,7 @@ function Layout({searchValue, setSearchValue}) {
                         </nav>
                     </div>
                     {searchBox &&
-                        <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+                        <Search />
                     }
                 </header>
                 <main className="main">

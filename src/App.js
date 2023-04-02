@@ -6,7 +6,10 @@ import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
-import { useState } from "react";
+import { createContext, useState } from "react";
+
+
+export const SearchContext = createContext();
 
 
 function App() {
@@ -14,18 +17,20 @@ function App() {
 	const [searchValue, setSearchValue] = useState('');
 
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Layout searchValue={searchValue} setSearchValue={setSearchValue} />}>
-					<Route index element={<Home searchValue={searchValue} setSearchValue={setSearchValue} />} />
-					<Route path="service" element={<Service />} />
-					<Route path="restaurants" element={<Restaurants />} />
-					<Route path="contact" element={<Contact />} />
-					<Route path="cart" element={<Cart />} />
-					<Route path="*" element={<NotFound />} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
+		<SearchContext.Provider value={{searchValue, setSearchValue}}>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<Layout />}>
+						<Route index element={<Home />} />
+						<Route path="service" element={<Service />} />
+						<Route path="restaurants" element={<Restaurants />} />
+						<Route path="contact" element={<Contact />} />
+						<Route path="cart" element={<Cart />} />
+						<Route path="*" element={<NotFound />} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
+		</SearchContext.Provider>
 	);
 }
 
