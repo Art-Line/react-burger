@@ -7,6 +7,7 @@ import Sorting from '../components/Sorting';
 // import burgersList from '../burgers.json';
 import { useEffect, useState, useContext } from 'react';
 import {SearchContext} from '../App'
+import ModalAbout from '../components/ModalAbout';
 
 function Home() {
 
@@ -26,11 +27,13 @@ function Home() {
     const sortField = ((sortActive.field.charAt(0) === '-')) ? sortActive.field.substring(1) : sortActive.field;
     const isSorting = sortActive ? `&orderby=${sortField}&order=${sortDirection}` : '';
 
+    // Paginator
     const [currentPage, setCurrentPage] = useState(1);
 
+    // search
     const {searchValue} = useContext(SearchContext);
 
-
+    // goods
     useEffect(() => {
         setLoading(false);
         fetch(`https://62c09be2d40d6ec55cd39a5f.mockapi.io/burgers?${isCategory}${isSorting}&page=${currentPage}&limit=8`)
@@ -41,9 +44,13 @@ function Home() {
             });
     }, [isCategory, isSorting, currentPage]);
 
+
+    // modal
+    const [modalIsOpen, setIsOpen] = useState(false);
+
     return (
         <>
-            {!searchValue && <Intro />}
+            {!searchValue && <Intro modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />}
             <section className="catalog">
                 <h2>
                     {searchValue ? `Search: ${searchValue}` : 'Our Burgers'}
@@ -76,6 +83,7 @@ function Home() {
                 </ul>
                 <Paginator currentPage={currentPage} setCurrentPage={setCurrentPage} />
             </section>
+            <ModalAbout setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} />
         </>
     )
 }

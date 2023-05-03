@@ -1,0 +1,23 @@
+.advantages {
+    list-style: none;
+    padding-left: 0;
+    &__item {
+        font-size: 16px;
+        line-height: 2.5em;
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding-left: 50px;
+        margin-bottom: 10px;
+        &_01 {
+            background-image: url('../img/ico-advantages-01.svg');
+        }
+        &_02 {
+            background-image: url('../img/ico-advantages-02.svg');
+            background-position: 2px center;
+        }
+        &_03 {
+            background-image: url('../img/ico-advantages-03.svg');
+            background-position: 2px center;
+        }
+    }
+}

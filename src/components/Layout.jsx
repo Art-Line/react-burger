@@ -33,8 +33,8 @@ function Layout() {
                             ></button>
                             {(desktop || mobileMenu) &&
                                 <ul className="main-menu__list">
-                                    <li><NavLink to="/service" onClick={() => setMobileMenu(false)}>Service</NavLink></li>
                                     <li><NavLink to="/restaurants" onClick={() => setMobileMenu(false)}>Restaurants</NavLink></li>
+                                    <li><NavLink to="/service" onClick={() => setMobileMenu(false)}>Reviews</NavLink></li>
                                     <li><NavLink to="/contact" onClick={() => setMobileMenu(false)}>Contact</NavLink></li>
                                 </ul>
                             }
@@ -52,8 +52,8 @@ function Layout() {
                 <div className="container">
                     <div className="footer__inset">
                         <ul className="footer__menu">
-                            <li><NavLink to="/service">Service</NavLink></li>
                             <li><NavLink to="/restaurants">Restaurants</NavLink></li>
+                            <li><NavLink to="/service">Reviews</NavLink></li>
                             <li><NavLink to="/contact">Contact</NavLink></li>
                         </ul>
                         <p className="footer__rights">© 2023 Burger - All rights reserved.</p>
