@@ -1,0 +1,28 @@
+.social {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    li {
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+    a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #EEEEEF;
+        path {
+            transition-duration: 0.2s;
+            transition-property: fill;
+        }
+        &:hover {
+            path {
+                fill: $orange;
+            }
+        }
+    }
+}

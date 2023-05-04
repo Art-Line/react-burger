@@ -53,7 +53,7 @@ function Layout() {
                     <div className="footer__inset">
                         <ul className="footer__menu">
                             <li><NavLink to="/restaurants">Restaurants</NavLink></li>
-                            <li><NavLink to="/service">Reviews</NavLink></li>
+                            <li><NavLink to="/reviews">Reviews</NavLink></li>
                             <li><NavLink to="/contact">Contact</NavLink></li>
                         </ul>
                         <p className="footer__rights">© 2023 Burger - All rights reserved.</p>
