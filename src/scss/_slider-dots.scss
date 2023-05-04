@@ -1,0 +1,33 @@
+.slider-dots {
+    padding-left: 0;
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    li {
+        margin: 0 7px;
+        &.slick-active {
+            button {
+                background-color: $orange;
+            }
+        }
+    }
+    button {
+        cursor: pointer;
+        font-size: 0;
+        width: 16px;
+        height: 16px;
+        background-color: $main;
+        border: none;
+        border-radius: 50%;
+        transition-duration: 0.2s;
+        transition-property: background-color;
+        &:hover {
+            background-color: rgba(54, 56, 83, 0.7);
+        }
+    }
+}

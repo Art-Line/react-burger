@@ -34,7 +34,7 @@ function Layout() {
                             {(desktop || mobileMenu) &&
                                 <ul className="main-menu__list">
                                     <li><NavLink to="/restaurants" onClick={() => setMobileMenu(false)}>Restaurants</NavLink></li>
-                                    <li><NavLink to="/service" onClick={() => setMobileMenu(false)}>Reviews</NavLink></li>
+                                    <li><NavLink to="/reviews" onClick={() => setMobileMenu(false)}>Reviews</NavLink></li>
                                     <li><NavLink to="/contact" onClick={() => setMobileMenu(false)}>Contact</NavLink></li>
                                 </ul>
                             }
