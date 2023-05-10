@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import { createContext, useState } from "react";
+import Counter from "./pages/testCounter";
 
 
 export const SearchContext = createContext();
@@ -26,6 +27,7 @@ function App() {
 						<Route path="restaurants" element={<Restaurants />} />
 						<Route path="contact" element={<Contact />} />
 						<Route path="cart" element={<Cart />} />
+						<Route path="counter" element={<Counter />} />
 						<Route path="*" element={<NotFound />} />
 					</Route>
 				</Routes>
